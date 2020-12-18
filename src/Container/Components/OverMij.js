@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import MainContact from "../Main/MainContact";
 import FAQ from "./OverMij/FAQ";
 
