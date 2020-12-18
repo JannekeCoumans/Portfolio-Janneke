@@ -1,38 +1,1048 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Chloe;
+  src: url('./Chloe-Regular.otf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 15px;
+  color: #3b3b3b;
+  background-color: #fff6f0
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Chloe";
+}
+
+h1 {
+  font-size: 30px;
+}
+
+a, em {
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #de7f61;
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color:#d7913d;
+  border: 2px solid #FFF;
+  letter-spacing: 0.4em;
+  font-size: 10px;
+  font-family: "Montserrat";
+  transition: all .2s ease-in;
+}
+
+button:hover {
+  background-color: #e2b0a1;
+  color: #FFFFFF;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+img {
+  border: 5px solid #FFFFFF;
+}
+
+nav {
+  width: 100%;
+  padding: 10px;
+  height: 80px;
+  position: fixed;
+  background-color: #fff6f0;
+  display: grid;
+  grid-template-columns: 1fr;
+  z-index: 99;
+}
+
+.nav-logo {
+  width: 100%;
+  background-image: url(./img/logo-janneke.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.nav-mobile-icon {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+
+.nav-mobile-icon svg {
+  font-size: 25px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 25px;
+}
+
+#mySidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #fff6f0;
+  background-image: url(./img/blobs/blob_mosterd2.svg);
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: 150px center;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#mySidenav .nav-logo {
+  height: 100px;
+}
+
+#mySidenav ul {
+  margin: 100px;
+}
+
+#mySidenav ul li {
+  list-style: none;
+}
+
+.sidenav a {
+  padding: 8px 0;
+  text-decoration: none;
+  font-size: 25px;
+  color: #3b3b3b;
+  display: block;
+  transition: 0.3s;
+}
+
+header, .over-mij-header, .portfolio-header, .contact-header {
+  width: 100%;
+  padding: 180px 20px 100px 20px;
+  text-align: center;
+  
+  background-image: url(./img/header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
+  animation: fadein 0.35s ease-in;
 }
 
-.App-link {
-  color: #61dafb;
+.header-text p {
+  margin: 20px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header-text__cta button {
+  margin: 5px 0px;
+}
+
+section.main-overmij, .over-mij-intro {
+  display: flex;
+  padding: 30px 20px;
+  flex-direction: column-reverse;
+  background-image: url(./img/blobs/blob_zalm2.svg);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  text-align: center;
+}
+
+.main-overmij-images div, .over-mij-intro-images div {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 5px solid #FFF;
+  width: 80%;
+}
+
+.main-overmij-images .back-image {
+  height: 400px;
+  background-image: url(./img/janneke-scaled.jpg);
+  float: left;
+}
+
+.main-overmij-images .front-image {
+  height: 300px;
+  background-image: url(./img/janneke1-scaled.jpg);
+  float: right;
+  margin-top: -200px;
+}
+
+.main-overmij-text h1 {
+  margin-bottom: 30px;
+}
+
+.main-overmij-text button {
+  margin: 30px 0;
+}
+
+.main-portfolio {
+  width: 100%;
+  padding: 30px 20px;
+  text-align: center;
+
+  background-image: url(./img/blobs/blob_mosterd2.svg);
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.main-portfolio p {
+  margin: 30px 0;
+}
+
+.main-portfolio button {
+  margin-top: 30px;
+}
+
+.main-portfolio-grid, .portfolio-grid {
+  width: 100%;
+  margin: 0 5%;
+  row-gap: 30px;
+  display: grid;
+  grid-template-columns: 90%;
+}
+
+.portfolio-item {
+  height: 200px;
+  background-color: #de7f61;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 5px solid #FFFFFF;
+  transition: 0.3s;
+}
+
+
+
+
+/* PORTFOLIO ITEMS ACHTERGRONDEN */
+
+.studentdashboard {background-image: url(./img/portfolio/studentdashboard-mockup-scaled.png);}
+.header-studentdashboard {background-image: url(./img/portfolio/studentdashboard-mockup2.png); background-color: #e2b0a1;}
+.portfolio-item-extrafoto1.image-studentdashboard {background-image: url(./img/portfolio/studentdashboard-foto1.png);}
+.portfolio-item-extrafoto2.image-studentdashboard {background-image: url(./img/portfolio/studentdashboard-foto2.png);}
+
+.playlist {background-image: url(./img/portfolio/songlist-mockup-scaled.png);}
+.header-playlist {background-image: url(./img/portfolio/playlist-mockup2.png);}
+
+.todolist {background-image: url(./img/portfolio/todolist-mockup-scaled.png);}
+.header-todolist {background-image: url(./img/portfolio/todolist-mockup2.png);}
+
+.website1 {background-image: url(./img/portfolio/website1-mockup-scaled.png);}
+.header-website1 {background-image: url(./img/portfolio/website1-mockup2.png);}
+.portfolio-item-extrafoto1.image-website1 {background-image: url(./img/portfolio/website1-foto1.png);}
+.portfolio-item-extrafoto2.image-website1 {background-image: url(./img/portfolio/website1-foto2.png);}
+
+.website2 {background-image: url(./img/portfolio/website2-mockup-scaled.png);}
+.header-website2 {background-image: url(./img/portfolio/website2-mockup2.png);}
+.portfolio-item-extrafoto1.image-website2 {background-image: url(./img/portfolio/website2-foto1.png);}
+.portfolio-item-extrafoto2.image-website2 {background-image: url(./img/portfolio/website2-foto2.png);}
+
+.website3 {background-image: url(./img/portfolio/website3-mockup-scaled.png);}
+.header-website3 {background-image: url(./img/portfolio/website3-mockup2.png);}
+.portfolio-item-extrafoto1.image-website3 {background-image: url(./img/portfolio/website3-foto1.png);}
+.portfolio-item-extrafoto2.image-website3 {background-image: url(./img/portfolio/website3-foto2.png);}
+
+.website4 {background-image: url(./img/portfolio/website4-mockup-scaled.png);}
+.header-website4 {background-image: url(./img/portfolio/website4-mockup2.png);}
+.portfolio-item-extrafoto1.image-website4 {background-image: url(./img/portfolio/website4-foto1.png);}
+.portfolio-item-extrafoto2.image-website4 {background-image: url(./img/portfolio/website4-foto2.png);}
+
+.website5 {background-image: url(./img/portfolio/website5-mockup-scaled.png);}
+.header-website5 {background-image: url(./img/portfolio/website5-mockup2.png);}
+.portfolio-item-extrafoto1.image-website5 {background-image: url(./img/portfolio/website5-foto1.png);}
+.portfolio-item-extrafoto2.image-website5 {background-image: url(./img/portfolio/website5-foto2.png);}
+
+
+
+.portfolio-item {
+  height: 200px;
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-item h1 {
+  color: #FFF;
+  text-shadow: 3px 3px 5px #3b3b3b;
+  transition: 0.3s;
+}
+
+.main-contact {
+  width: 100%;
+  padding: 30px 20px;
+  text-align: center;
+  background-image: url(./img/blobs/blob_roze.svg);
+  background-position: 0px 0px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.main-contact-text p {
+  margin: 30px 0;
+}
+
+.main-contact-form input {
+  width: 300px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.main-contact-form textarea {
+  width: 300px;
+  height: 100px;
+}
+
+.main-contact-form input, .main-contact-form textarea {
+  padding: 10px;
+  font-family: 'Montserrat';
+  background-color: #fff6f0;
+  border: 5px solid #FFF;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #3b3b3b;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+}
+
+.main-contact-form button {
+  margin: 30px 0;
+}
+
+footer {
+  width: 100%;
+  padding: 50px 10%;
+  
+
+  color: #fff;
+  background-color: #3b3b3b;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+}
+
+.footer-logo {
+  width: 100%;
+  height: 100px;
+  background-image: url(./img/logo-janneke.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+footer ul {
+  list-style-type: none;
+  display: inline-block;
+}
+
+footer ul p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #fff6f0;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+footer ul li {
+  margin: 10px 0;
+}
+
+footer ul li a {
+  font-weight: normal;
+}
+
+.footer-contact svg {
+  margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* OVER MIJ PAGINA */
+
+.over-mij-text {
+  text-align: center;
+  margin: 30px 20px;
+}
+
+.over-mij-text p {
+  margin: 30px 0;
+}
+
+.over-mij-intro-text p {
+  margin: 30px 0;
+}
+
+.over-mij-intro-images .back-image{
+  height: 300px;
+  background-image: url(./img/janneke1-scaled.jpg);
+  float: right;
+}
+
+.over-mij-intro-images .front-image{
+  height: 300px;
+  background-image: url(./img/janneke-scaled.jpg);
+  float: left;
+  margin-top: -100px;
+}
+
+.over-mij-faq {
+  padding: 30px 20px;
+}
+
+.over-mij-faq-text {
+  text-align: center;
+}
+
+.over-mij-faq-text p {
+  margin: 30px 0;
+}
+
+.accordion__button {
+  background-color: #d7913d;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: 2px solid #FFF;
+  line-height: 20px;
+}
+
+.accordion__button:hover {
+  background-color: #e2b0a1;
+}
+
+.accordion__button:before {
+  display: inline-block;
+  content: '';
+  height: 10px;
+  width: 10px;
+  margin-right: 12px;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+  transform: rotate(45deg);
+}
+
+[hidden] {
+  display: none;
+}
+
+.accordion__panel {
+  padding: 20px;
+  animation: fadein 0.35s ease-in;
+}
+
+
+
+@keyframes fadein {
+  0% {
+      opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+      opacity: 1;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PORTFOLIO PAGINA */
+
+.portfolio-intro {
+  width: 100%;
+  padding: 0 10%;
+  text-align: center;
+}
+
+.portfolio-intro h1 {
+  margin: 30px 0;
+}
+
+.portfolio-grid {
+  width: 80%;
+  margin: 30px 10%;
+}
+
+/* PORTFOLIO-ITEM PAGINA */
+
+section.portfolio {
+  background-image: url(./img/blobs/blob_mosterd3.svg);
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: left center;
+}
+
+.portfolio-grid {
+  margin: 50px auto !important;
+}
+
+.portfolio-item-header {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 30px;
+}
+
+.portfolio-item-text {
+  width: 100%;
+  padding: 30px 10%;
+  background-image: url(./img/blobs/blob_zalm.svg);
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: left center;
+  text-align: center;
+}
+
+.portfolio-item-text-intro, .portfolio-item-text-toelichting {
+  margin-top: 30px;
+}
+
+.portfolio-item-vereisten h1 {
+  margin: 30px 0;
+}
+
+.portfolio-item-vereisten ul {
+  display: inline-block;
+  text-align: left;
+}
+
+
+.portfolio-item-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+  margin: 30px 0;
+}
+
+.portfolio-item-images div {
+  border: 5px solid #FFF;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.portfolio-item-text button {
+  margin-top: 50px;
+}
+
+.portfolio-breadcrumbs {
+  margin: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CONTACT PAGINA */
+
+.contact-page-grid {
+  display: flex;
+  flex-direction: column-reverse;
+  column-gap: 50px;
+
+  
+
+  background-image: url(./img/blobs/blob_roze3.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.contact-page-contactgegevens {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.contact-page-contactgegevens h1 {
+  padding: 30px;
+}
+
+.contact-page-formulier {
+  width: 100%;
+  padding: 0 10%;
+  text-align: center;
+}
+
+.contact-page-formulier input, .contact-page-formulier textarea {
+  width: 100%;
+  border: 5px solid #FFF;
+  background-color: #fff6f0;
+  margin-bottom: 20px;
+}
+
+.contact-page-formulier input {
+  height: 50px;
+  padding: 10px;
+}
+
+.contact-page-formulier textarea {
+  height: 100px;
+  padding: 10px;
+}
+
+.contact-page-formulier textarea::placeholder {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.contact-page-formulier button {
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******         TABLET VERSIE           ******/
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 45px;
+  }
+
+  header {
+    padding: 300px 50px 200px 50px;
+  }
+
+  .header-text__cta {
+    margin: 0 20%;
+  }
+
+  section.main-overmij, .main-portfolio, .main-contact {
+    padding: 50px 30px;
+  }
+
+  .main-portfolio p, .main-contact-text p {
+    margin: 50px 0;
+  }
+
+  .main-portfolio-grid, .portfolio-grid {
+    grid-template-columns: 1fr 1fr;
+    margin: 0px 0px;
+    gap: 30px;
+  }
+
+  .main-contact-form input {
+    margin: 0 200px 30px 200px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******         DESKTOP VERSIE           ******/
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 45px;
+  }
+  
+  nav {
+    height: 120px;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 100px;
+    transition: 0.3s;
+    background-color: #fff6f0a6;
+  }
+
+  .nav-scrolled {
+    height: 80px;
+    background-color: #fff6f0;
+    padding: 10px 100px;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    text-transform: uppercase;
+  }
+
+  .nav-menu ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 0 20px
+  }
+  
+  .nav-menu ul button {
+    margin-left: 20px;
+  }
+
+  .nav-mobile-icon {
+    display: none;
+  }
+
+  header {
+    height: 700px;
+    padding: unset
+  }
+
+  .header-text p {
+    width: 500px;
+    margin: 50px auto;
+  
+    font-size: 20px;
+  }
+
+  .header-text__cta {
+    margin: unset;
+  }
+
+  .header-text__cta button {
+    margin: 0 10px;
+  }
+
+  section.main-overmij, .over-mij-intro {
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 50px 10%;
+  background-size: 400px;
+  text-align: left;
+}
+
+.main-overmij-images, .main-overmij-text, .over-mij-intro-images, .over-mij-intro-text {
+  width: 450px;
+}
+
+.main-overmij-images div, .over-mij-intro-images div {
+  width: 300px;
+}
+
+.main-overmij-text, .over-mij-intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-overmij-text h1 {
+  margin-bottom: 50px;
+}
+
+.main-overmij-text button {
+  margin: 50px 0;
+}
+
+.main-portfolio {
+  padding: 50px 10%;
+}
+
+.main-portfolio p {
+  margin: 50px 0;
+}
+
+.main-portfolio button {
+  margin-top: 50px;
+}
+
+.main-portfolio-grid, .portfolio-grid {
+  width: 1000px;
+  margin: 0 auto;
+  grid-template-columns: 300px 300px 300px;
+  column-gap: 50px;
+}
+
+.portfolio-item h1 {
+  color: #3b3b3b00;
+  transition: 0.3s;
+  text-shadow: none;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-item:hover .portfolio-item h1 {
+  color: #FFF;
+  text-shadow: 3px 3px 5px #3b3b3b;
+}
+
+.main-contact {
+  padding: 50px 10%;
+}
+
+.main-contact-text p {
+  margin: 50px 0;
+}
+
+.main-contact-form input {
+  height: 36px;
+  margin-bottom: unset;
+  margin: 0 10px;
+}
+
+.main-contact-form textarea {
+  width: 620px;
+  margin: 20px 0;
+}
+
+footer {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.over-mij-faq {
+  padding: 50px 20%;
+}
+
+.portfolio-item-header{
+  height: 600px;
+}
+
+.portfolio-item-images {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  margin: 50px 0;
+}
+
+.portfolio-item-images div {
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+}
+
+.portfolio-item-text {
+  padding: 50px 10%;
+  background-size: 500px;
+  text-align: center;
+}
+
+.portfolio-item-text-intro, .portfolio-item-text-toelichting {
+  margin-top: 50px;
+}
+
+.portfolio-item-vereisten h1 {
+  margin: 50px 0;
+}
+
+.portfolio-item-text button {
+  margin-top: 50px;
+}
+
+.portfolio-intro h1 {
+  margin: 50px 0;
+}
+.portfolio-grid {
+  margin: 50px auto;
+}
+
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  background-position: right;
+  width: 100%;
+  padding: 50px 100px;
+}
+
+.contact-page-contactgegevens, .contact-page-formulier {
+  padding: 50px 10%;
+}
+
+
+
+.contact-page-contactgegevens h1 {
+  padding-bottom: 50px;
+}
+
+header, .over-mij-header, .portfolio-header, .contact-header {
+  padding: 230px 20px 150px 20px;
+}
+
+.over-mij-intro-images .back-image, .over-mij-intro-images .front-image{
+  height: 400px;
+}
+
 }
